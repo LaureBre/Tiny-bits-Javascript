@@ -56,7 +56,7 @@ function changeGuess() {
   else if (guess > quizz) {
     domMessage.innerText = "Votre nombre est trop grand.";
     if (guess > vmax) {
-      document.getElementById('pasMalin').innerText = "Voilà qui n\'est pas malin, vous saviez déjà que c\'était plus !";
+      document.getElementById('pasMalin').innerText = "Voilà qui n\'est pas malin, vous saviez déjà que c\'était moins !";
     };
     vmax = guess;
     for (i = 0; i < domFourchette.length; i++) {
