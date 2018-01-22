@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <script type="text/javascript" src="js/plusMoins.js"></script>
+    <!-- <script type="text/javascript" src="js/temp.js"></script> -->
     <script type="text/javascript" src="js/conv.js"></script>
     <script type="text/javascript" src="js/tva.js"></script>
     <script type="text/javascript" src="js/testNb.js"></script>
@@ -24,39 +24,51 @@
 
 <!-- Fonction appelée depuis le formulaire ne marche plus. Pourquoi ??! -->
     <!-- <form> -->
+    <div id="divers">
         <button type="button" onclick="tva()">Ajout de TVA (19,6%)</button>
-
         <button type="button" onclick="conv()">Conversion en °F</button>
+        <label for="annee">Entrez l'année : </label>
+        <input type="text" onblur="testNb()" value="AAAA" name="annee" id="nombre" onfocus="(this.value ='')"></input>
+    </div>
 
-        <fieldset><legend>Jeu du plus et du moins :</legend>
-          <div id="choix">
-            <label for="max100">Nombre de 1 à 100</label>
-            <input type="radio" name="plusMoins" onchange="plusMoins(this.id)" id="max100" value="100">
-              <br>
-            <label for="max500">Nombre de 1 à 500</label>
-            <input type="radio" name="plusMoins" onchange="plusMoins(this.id)" id="max500" value="500">
-              <br>
-            <label for="max1000">Nombre de 1 à 1000</label>
-            <input type="radio" name="plusMoins" onchange="plusMoins(this.id)" id="max1000" value="1000">
-            <button type="button" onclick="plusMoins()">Rejouer</button>
-          </div>
-          <div id="affjs">
-            <input type="number" id="guess" min="0">
-            <p id="message"></p>
-          </div>
+        <fieldset><legend>Trouver un nombre entre :</legend>
+            <div class="cadre">
+                <ul>
+                  <li><label for="max100"> 1 et 100 </label></li>
+                  <li><label for="max500"> 1 et 500 </label></li>
+                  <li><label for="max1000">1 et 1000 </label></li>
+                </ul>
+                <ul>
+                    <li><input type="radio" name="max" onchange="changeMax(100)" id="max100"></li>
+                    <li><input type="radio" name="max" onchange="changeMax(500)" id="max500"></li>
+                    <li><input type="radio" name="max" onchange="changeMax(1000)" id="max1000"></li>
+                </ul>
+            </div>
+
+            <div>
+              <button type="button" onclick="reInitialise()">Réinitialiser</button>
+            </div>
+
+            <div id="affjs">
+              <div id="rangeMinMax">
+                <p id="afficheMin">1</p>
+                <div id="dualRange">
+                  <div class="fourchette"></div>
+                  <input type="range" min="1" max="100" id="guess" value="0" onchange="changeGuess()" oninput="afficheValeur()">
+                  <div class="fourchette"></div>
+                </div>
+                <p id="afficheMax">100</p>
+              </div>
+              <div id="rangeResultat">
+                <p id="afficheGuess">&nbsp;</p>
+                <p id="message"></p>
+              </div>
+              <p id="pasMalin"></p>
+            </div>
 
         </fieldset>
 
-        <div>
-          <label for="annee">Entrez l'année : </label>
-          <input type="text" onblur="testNb()" value="AAAA" name="annee" id="nombre" onfocus="(this.value ='')"></input>
-        </div>
-<!-- bouton reset hors formulaire ne fonctionne évidemment pas. -->
-        <!-- <button type="reset" value="Réinitialiser">Reset</button> -->
-
-    <!-- </form> -->
-    <p id="fizz"></p>
-
+    <script type="text/javascript" src="js/plusMoins2.js"></script>
 
 </body>
 

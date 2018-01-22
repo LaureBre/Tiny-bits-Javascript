@@ -1,4 +1,4 @@
-var max;
+var max = 100;
 
 function plusMoins(thisId)
 {
