@@ -1,5 +1,5 @@
 function tva() {
-  var tva = Number(prompt("Entrez le prix Hors Taxe :"));
+  var tva = Number(document.getElementById('tva').value);
 
-  console.log("Le prix TTC est de " + (tva += (tva * .196)) + " euros");
+  document.getElementById('affDivers').innerText = ("Le prix TTC est de " + (tva += (tva * .196)) + " euros");
 }

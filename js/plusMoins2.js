@@ -74,6 +74,32 @@ function changeGuess() {
   };
 }
 
+function incremente() {
+  guess++;
+  if (guess > max) {
+    guess--;
+    domMessage.innerText = "Vous essayez de dépasser les limites, ce n\'est pas ici qu\'il faut le faire !";
+  }
+  else {
+    document.getElementById("guess").value = guess;
+    afficheValeur();
+    changeGuess();
+  }
+}
+
+function decremente() {
+  guess--;
+  if (guess < 1) {
+    guess++;
+    domMessage.innerText = "Vous essayez de dépasser les limites, ce n\'est pas ici qu\'il faut le faire !";
+  }
+  else {
+    document.getElementById("guess").value = guess;
+    afficheValeur();
+    changeGuess();
+  };
+}
+
 function nettoyage() {
   decompte = 0;
   guess = 0;
@@ -85,6 +111,7 @@ function nettoyage() {
     domFourchette[i].style.marginLeft = "0";
   };
   domMessage.style.color = "black";
+  domMessage.style.background = "transparent";
   document.getElementById('pasMalin').innerText = '';
 }
 

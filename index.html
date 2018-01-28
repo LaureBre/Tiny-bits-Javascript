@@ -25,10 +25,12 @@
 <!-- Fonction appelée depuis le formulaire ne marche plus. Pourquoi ??! -->
     <!-- <form> -->
     <div id="divers">
-        <button type="button" onclick="tva()">Ajout de TVA (19,6%)</button>
+        <label for="tva">Ajout de TVA (19,6%), entrez le prix Hors Taxe :</label>
+        <input type="number" onblur="tva()" name="tva" class="inputConv" id="tva" onfocus="(this.value ='')" onKeyPress="if (event.keyCode == 13) tva()"></input>
         <button type="button" onclick="conv()">Conversion en °F</button>
         <label for="annee">Entrez l'année : </label>
-        <input type="text" onblur="testNb()" value="AAAA" name="annee" id="nombre" onfocus="(this.value ='')"></input>
+        <input type="text" onblur="testNb()" value="AAAA" class="inputConv"  id="annee" onfocus="(this.value ='')" onKeyPress="if (event.keyCode == 13) testNb()"></input>
+        <p id="affDivers"></p>
     </div>
 
         <fieldset><legend>Trouver un nombre entre :</legend>
@@ -61,7 +63,11 @@
               </div>
               <div id="rangeResultat">
                 <p id="afficheGuess">&nbsp;</p>
-                <p id="message"></p>
+                <div id="plusMessageMoins">
+                  <button id="moins" onclick="decremente()">-</button>
+                  <p id="message"></p>
+                  <button id="plus" onclick="incremente()">+</button>
+                </div>
               </div>
               <p id="pasMalin"></p>
             </div>

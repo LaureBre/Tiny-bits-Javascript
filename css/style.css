@@ -24,6 +24,24 @@ button
 #divers
 {
   margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#divers *
+{
+  margin: 10px;
+}
+
+#annee, #tva
+{
+  width: 60px;
+}
+
+#affDivers p
+{
+  border: ;
 }
 
 fieldset
@@ -179,18 +197,26 @@ input[type=range]::-ms-thumb {
   margin-top: -3px;
 }
 
-#rangeResultat p, #pasMalin
+/* #rangeResultat p, #pasMalin */
+p
 {
   text-align: center;
 }
 
-#message
+#message, #affDivers
 {
   border: 2px outset grey;
   height: 50px;
   line-height: 50px;
   width: 80%;
-  margin: auto;
+  /* margin: auto; */
+}
+
+#plusMessageMoins
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #reinit
