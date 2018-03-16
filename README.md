@@ -1,4 +1,4 @@
-Context : Aformac training for professionnal title Software developper
+Context : Aformac training for professional title Software developper
 
 Goal : first Javascript, had to calculate things (tax, conversion..) with popups, then without (use DOM to access HTML), and finally make a "guess a number" game with 3 levels of difficulty.
 
